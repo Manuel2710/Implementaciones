@@ -1,12 +1,12 @@
 public class main {
     public static void main(String[] args) {
         Solicitud solicitudAcuerdo = new SolicitudAcuerdo();
-        Documento acuerdo = solicitudAcuerdo.crearDocumento();
+        Documento acuerdo = solicitudAcuerdo.solicitar();
 
         Solicitud solicitudContrato = new SolicitudContrato();
-        Documento contrato = solicitudContrato.crearDocumento();
+        Documento contrato = solicitudContrato.solicitar();
 
         Solicitud solicitudNotificacion = new SolicitudNotificacion();
-        Documento notificacion = solicitudNotificacion.crearDocumento();
+        Documento notificacion = solicitudNotificacion.solicitar();
     }
 }
