@@ -1,12 +1,23 @@
+import java.util.Scanner;
+
 public class main {
     public static void main(String[] args) {
-        Solicitud solicitudAcuerdo = new SolicitudAcuerdo();
-        Documento acuerdo = solicitudAcuerdo.solicitar();
 
-        Solicitud solicitudContrato = new SolicitudContrato();
-        Documento contrato = solicitudContrato.solicitar();
+        Scanner lectura = new Scanner (System.in);
 
-        Solicitud solicitudNotificacion = new SolicitudNotificacion();
-        Documento notificacion = solicitudNotificacion.solicitar();
+        System.out.println("Ingrese el nombre del documento: ");
+        String nombre = (lectura.next()).toLowerCase();
+
+        if ("acuerdo".equals(nombre)){
+            Solicitud solicitudAcuerdo = new SolicitudAcuerdo();
+            Documento documento = solicitudAcuerdo.solicitar();
+        } else if ("contrato".equals(nombre)){
+            Solicitud solicitudContrato = new SolicitudContrato();
+            Documento documento = solicitudContrato.solicitar();
+        } else if ("solicitud".equals(nombre)){
+
+            Solicitud solicitudNotificacion = new SolicitudNotificacion();
+            Documento documento = solicitudNotificacion.solicitar();
+        }
     }
 }
