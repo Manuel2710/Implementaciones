@@ -13,23 +13,50 @@ public class main {
         // leer input del usuario
         Scanner scanner = new Scanner(System.in);
         int opcion = scanner.nextInt();
-        scanner.close();
+        System.out.println();
+
+        String nombre;
+
 
         // solicitar el documento seleccionado segun el input
         switch (opcion) {
             case 1:
                 Solicitud solicitudAcuerdo = new SolicitudAcuerdo();
-                Documento acuerdo = solicitudAcuerdo.solicitar("Juan Pérez", "Acuerdo de confidencialidad", "2021-01-01");
+                Documento acuerdo = solicitudAcuerdo.solicitar();
+
+                System.out.println("Ingrese el nombre del cliente");
+                nombre = scanner.next();
+                System.out.println();
+                scanner.close();
+
+                acuerdo.setNombre(nombre);
+                acuerdo.printData();
                 break;
             
             case 2:
                 Solicitud solicitudContrato = new SolicitudContrato();
-                Documento contrato = solicitudContrato.solicitar("Juan Pérez", "Contrato de trabajo", "2021-01-01");
+                Documento contrato = solicitudContrato.solicitar();
+
+                System.out.println("Ingrese el nombre del cliente");
+                nombre = scanner.next();
+                System.out.println();
+                scanner.close();
+
+                contrato.setNombre(nombre);
+                contrato.printData();
                 break;
 
             case 3:
                 Solicitud solicitudNotificacion = new SolicitudNotificacion();
-                Documento notificacion = solicitudNotificacion.solicitar("juan@perez.com", "Este es un mensaje de notificación");
+                Documento notificacion = solicitudNotificacion.solicitar();
+
+                System.out.println("Ingrese el nombre del cliente");
+                nombre = scanner.next();
+                System.out.println();
+                scanner.close();
+
+                notificacion.setNombre(nombre);
+                notificacion.printData();
                 break;
 
             default:
